@@ -1,0 +1,116 @@
+[gd_scene format=3 uid="uid://b5xca7hwn760f"]
+
+[ext_resource type="Script" uid="uid://3eew7yjn7xbi" path="res://Scripts/minigame_1.gd" id="1_5txvl"]
+[ext_resource type="Texture2D" uid="uid://b4bbubfhrhoqi" path="res://Assets/BlueTube.png" id="1_o6yob"]
+[ext_resource type="Texture2D" uid="uid://b544giq0stkj8" path="res://Assets/RedTube.png" id="2_5txvl"]
+[ext_resource type="Texture2D" uid="uid://cciwg8a1xjk6u" path="res://Assets/greenBackground.png" id="2_ojqsy"]
+[ext_resource type="Texture2D" uid="uid://cdrav6nbcqo2q" path="res://Assets/GreenTube.png" id="3_0uv5o"]
+[ext_resource type="Texture2D" uid="uid://7r54xxg15epr" path="res://Assets/YellowTube.png" id="4_ojqsy"]
+[ext_resource type="PackedScene" uid="uid://djf4jmo5b3b8f" path="res://Scenes/themed_timer.tscn" id="6_0uv5o"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_bhunq"]
+radius = 33.0
+height = 164.0
+
+[node name="minigame_1" type="Node2D" unique_id=207527288]
+script = ExtResource("1_5txvl")
+numberToCorrect = 10
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=351824147]
+offset_right = 1399.1882
+offset_bottom = 649.0
+texture = ExtResource("2_ojqsy")
+
+[node name="BlueTube" type="Area2D" parent="." unique_id=2074744453]
+position = Vector2(44, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="BlueTube" unique_id=914501454]
+position = Vector2(293.99997, 488)
+scale = Vector2(1.5999994, 1.5999994)
+texture = ExtResource("1_o6yob")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BlueTube" unique_id=502184421]
+position = Vector2(286, 500)
+shape = SubResource("CapsuleShape2D_bhunq")
+
+[node name="BlueTimer" type="Timer" parent="BlueTube" unique_id=1496270482]
+
+[node name="RedTube" type="Area2D" parent="." unique_id=2050908139]
+position = Vector2(218, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="RedTube" unique_id=2086277536]
+position = Vector2(293.99997, 488)
+scale = Vector2(1.5999994, 1.5999994)
+texture = ExtResource("2_5txvl")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RedTube" unique_id=855364738]
+position = Vector2(286, 500)
+shape = SubResource("CapsuleShape2D_bhunq")
+
+[node name="RedTimer" type="Timer" parent="RedTube" unique_id=57095783]
+
+[node name="GreenTube" type="Area2D" parent="." unique_id=233604021]
+position = Vector2(395, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="GreenTube" unique_id=1606713572]
+position = Vector2(293.99997, 488)
+scale = Vector2(1.5999994, 1.5999994)
+texture = ExtResource("3_0uv5o")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GreenTube" unique_id=596327869]
+position = Vector2(286, 500)
+shape = SubResource("CapsuleShape2D_bhunq")
+
+[node name="GreenTimer" type="Timer" parent="GreenTube" unique_id=281345043]
+
+[node name="YellowTube" type="Area2D" parent="." unique_id=1542494887]
+position = Vector2(587, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="YellowTube" unique_id=1326783626]
+position = Vector2(293.99997, 488)
+scale = Vector2(1.5999994, 1.5999994)
+texture = ExtResource("4_ojqsy")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="YellowTube" unique_id=1341111058]
+position = Vector2(286, 500)
+shape = SubResource("CapsuleShape2D_bhunq")
+
+[node name="YellowTimer" type="Timer" parent="YellowTube" unique_id=775075293]
+
+[node name="colorsText" type="RichTextLabel" parent="." unique_id=1061178700]
+offset_left = 269.0
+offset_top = 67.0
+offset_right = 935.0
+offset_bottom = 170.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/outline_size = 41
+theme_override_font_sizes/normal_font_size = 73
+text = "RED + BLUE"
+scroll_active = false
+horizontal_alignment = 1
+
+[node name="scoreText" type="RichTextLabel" parent="." unique_id=613160855]
+offset_left = 244.0
+offset_top = 1.0
+offset_right = 910.0
+offset_bottom = 104.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/outline_size = 41
+theme_override_font_sizes/normal_font_size = 53
+text = "0/10"
+scroll_active = false
+horizontal_alignment = 1
+
+[node name="themed_timer" parent="." unique_id=2128507609 instance=ExtResource("6_0uv5o")]
+position = Vector2(-3, -291)
+
+[connection signal="mouse_entered" from="BlueTube" to="." method="_on_blue_tube_mouse_entered"]
+[connection signal="timeout" from="BlueTube/BlueTimer" to="." method="_on_blue_timer_timeout"]
+[connection signal="mouse_entered" from="RedTube" to="." method="_on_red_tube_mouse_entered"]
+[connection signal="timeout" from="RedTube/RedTimer" to="." method="_on_red_timer_timeout"]
+[connection signal="mouse_entered" from="GreenTube" to="." method="_on_green_tube_mouse_entered"]
+[connection signal="timeout" from="GreenTube/GreenTimer" to="." method="_on_green_timer_timeout"]
+[connection signal="mouse_entered" from="YellowTube" to="." method="_on_yellow_tube_mouse_entered"]
+[connection signal="timeout" from="YellowTube/YellowTimer" to="." method="_on_yellow_timer_timeout"]

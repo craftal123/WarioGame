@@ -51,6 +51,14 @@ theme_override_constants/outline_size = 8
 theme_override_font_sizes/font_size = 28
 text = "Quit"
 
+[node name="Button" type="Button" parent="." unique_id=1564845207]
+layout_mode = 0
+offset_left = 186.0
+offset_top = 141.0
+offset_right = 194.0
+offset_bottom = 149.0
+scale = Vector2(2.2399993, 2.2399993)
+
 [connection signal="pressed" from="buttonsContainer/StartButton" to="." method="_on_start_button_pressed"]
 [connection signal="pressed" from="buttonsContainer/OptionsButton" to="." method="_on_options_button_pressed"]
 [connection signal="pressed" from="buttonsContainer/QuitButton" to="." method="_on_quit_button_pressed"]

@@ -23,7 +23,7 @@ Global="*uid://2lwgxcneu7gx"
 
 window/stretch/mode="viewport"
 mouse_cursor/custom_image="uid://dwb2lgyowibxa"
-mouse_cursor/tooltip_position_offset=Vector2(7, 5)
+mouse_cursor/custom_image_hotspot=Vector2(68, 25)
 
 [editor_plugins]
 
