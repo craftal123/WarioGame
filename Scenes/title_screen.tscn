@@ -1,0 +1,56 @@
+[gd_scene format=3 uid="uid://b76s780slw44m"]
+
+[ext_resource type="Texture2D" uid="uid://chguqrsa686ua" path="res://Assets/warioware.png" id="1_klylv"]
+[ext_resource type="Script" uid="uid://csfox42dqjj4f" path="res://Scenes/title_screen.gd" id="2_p3fck"]
+
+[node name="TitleScreen" type="TextureRect" unique_id=1841224672]
+offset_right = 1151.0806
+offset_bottom = 647.0
+texture = ExtResource("1_klylv")
+script = ExtResource("2_p3fck")
+
+[node name="Title" type="RichTextLabel" parent="." unique_id=105545996]
+clip_contents = false
+layout_mode = 0
+offset_left = 316.0
+offset_top = 116.0
+offset_right = 840.0
+offset_bottom = 275.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 51
+theme_override_font_sizes/normal_font_size = 108
+text = "MistWare
+"
+scroll_active = false
+
+[node name="buttonsContainer" type="VBoxContainer" parent="." unique_id=1656544098]
+layout_mode = 0
+offset_left = 465.0
+offset_top = 262.0
+offset_right = 675.1892
+offset_bottom = 464.0
+
+[node name="StartButton" type="Button" parent="buttonsContainer" unique_id=2081716035]
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 8
+theme_override_font_sizes/font_size = 28
+text = "Start Game"
+
+[node name="OptionsButton" type="Button" parent="buttonsContainer" unique_id=1297872084]
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 8
+theme_override_font_sizes/font_size = 28
+text = "Options"
+
+[node name="QuitButton" type="Button" parent="buttonsContainer" unique_id=1456945400]
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 8
+theme_override_font_sizes/font_size = 28
+text = "Quit"
+
+[connection signal="pressed" from="buttonsContainer/StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="buttonsContainer/OptionsButton" to="." method="_on_options_button_pressed"]
+[connection signal="pressed" from="buttonsContainer/QuitButton" to="." method="_on_quit_button_pressed"]
