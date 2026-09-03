@@ -1,0 +1,64 @@
+[gd_scene format=3 uid="uid://dumhxj34wd8y2"]
+
+[ext_resource type="Script" uid="uid://bf32qm31wihk3" path="res://Scripts/timer_screen.gd" id="1_c7xwe"]
+[ext_resource type="Texture2D" uid="uid://chguqrsa686ua" path="res://Assets/warioware.png" id="1_cn3xy"]
+[ext_resource type="Texture2D" uid="uid://fm8erbbyxjc4" path="res://Assets/broccoli.png" id="2_c7xwe"]
+
+[node name="level_scene" type="Node2D" unique_id=370990137]
+script = ExtResource("1_c7xwe")
+
+[node name="background" type="TextureRect" parent="." unique_id=1896041069]
+offset_right = 1152.8596
+offset_bottom = 648.0
+texture = ExtResource("1_cn3xy")
+
+[node name="BroccoliContainer" type="HBoxContainer" parent="." unique_id=220722311]
+offset_left = 174.0
+offset_top = 147.0
+offset_right = 2690.0
+offset_bottom = 647.0
+scale = Vector2(0.3974256, 0.3974256)
+theme_override_constants/separation = -142
+
+[node name="Broccoli" type="TextureRect" parent="BroccoliContainer" unique_id=2063603854]
+layout_mode = 2
+texture = ExtResource("2_c7xwe")
+
+[node name="Broccoli2" type="TextureRect" parent="BroccoliContainer" unique_id=1235322207]
+layout_mode = 2
+texture = ExtResource("2_c7xwe")
+
+[node name="Broccoli3" type="TextureRect" parent="BroccoliContainer" unique_id=872724851]
+layout_mode = 2
+texture = ExtResource("2_c7xwe")
+
+[node name="Broccoli4" type="TextureRect" parent="BroccoliContainer" unique_id=616555858]
+layout_mode = 2
+texture = ExtResource("2_c7xwe")
+
+[node name="Broccoli5" type="TextureRect" parent="BroccoliContainer" unique_id=397280222]
+layout_mode = 2
+texture = ExtResource("2_c7xwe")
+
+[node name="Level" type="RichTextLabel" parent="." unique_id=1744796380]
+clip_contents = false
+offset_left = 473.00003
+offset_top = 312.0
+offset_right = 554.0
+offset_bottom = 343.0
+scale = Vector2(2.2995307, 2.2995307)
+theme_override_constants/outline_size = 8
+theme_override_font_sizes/normal_font_size = 22
+text = "Level #"
+fit_content = true
+scroll_active = false
+
+[node name="Timer" type="RichTextLabel" parent="." unique_id=741424800]
+clip_contents = false
+offset_left = 507.0
+offset_top = 431.99997
+offset_right = 547.0
+offset_bottom = 471.99997
+scale = Vector2(3.1326482, 3.1326482)
+theme_override_constants/outline_size = 7
+text = "0.0"

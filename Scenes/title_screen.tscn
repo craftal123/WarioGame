@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://b76s780slw44m"]
 
 [ext_resource type="Texture2D" uid="uid://chguqrsa686ua" path="res://Assets/warioware.png" id="1_klylv"]
-[ext_resource type="Script" uid="uid://csfox42dqjj4f" path="res://Scenes/title_screen.gd" id="2_p3fck"]
+[ext_resource type="Script" uid="uid://csfox42dqjj4f" path="res://Scripts/title_screen.gd" id="2_p3fck"]
 
 [node name="TitleScreen" type="TextureRect" unique_id=1841224672]
 offset_right = 1151.0806

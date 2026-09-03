@@ -15,9 +15,15 @@ run/main_scene="uid://b76s780slw44m"
 config/features=PackedStringArray("4.7", "GL Compatibility")
 config/icon="res://icon.svg"
 
+[autoload]
+
+Global="*uid://2lwgxcneu7gx"
+
 [display]
 
 window/stretch/mode="viewport"
+mouse_cursor/custom_image="uid://dwb2lgyowibxa"
+mouse_cursor/tooltip_position_offset=Vector2(7, 5)
 
 [editor_plugins]
 
@@ -29,6 +35,7 @@ enabled=PackedStringArray("res://addons/godot_super-wakatime/plugin.cfg")
 
 [rendering]
 
+textures/canvas_textures/default_texture_filter=0
 rendering_device/driver.windows="d3d12"
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
